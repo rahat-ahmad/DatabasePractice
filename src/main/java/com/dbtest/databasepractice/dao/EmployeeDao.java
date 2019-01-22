@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.dbtest.databasepractice.model.Employee;
 
-public interface EmployeeOperations {
+public interface EmployeeDao {
 	
 	boolean insertEmployee(Employee employee);
 	List<Employee> viewAllEmplyee();
