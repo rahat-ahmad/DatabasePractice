@@ -1,7 +1,6 @@
 package com.dbtest.databasepractice.serviceimpl;
 
 import java.util.List;
-
 import com.dbtest.databasepractice.dao.EmployeeDao;
 import com.dbtest.databasepractice.daoimpl.EmployeeDaoImpl;
 import com.dbtest.databasepractice.model.Employee;
@@ -18,41 +17,42 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	public List<Employee> viewAllEmployeeService() {
 		// TODO Auto-generated method stub
-		return null;
+		return emplopyeeDao.viewAllEmplyee();
 	}
 
 	public boolean updateEmployeeService(Employee employee) {
 		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public boolean deleteEmployeeService(Employee employee) {
-		// TODO Auto-generated method stub
-		return false;
+		return emplopyeeDao.updateEmployee(employee);
 	}
 
 	@Override
-	public boolean getSpecificEmployeeService(int id) {
+	public List<Employee> getSpecificEmployeeService(int id) {
 		// TODO Auto-generated method stub
-		return false;
+		return emplopyeeDao.getSpecificEmployee(id);
 	}
 
 	@Override
 	public List<Employee> getMaxSalaryService() {
 		// TODO Auto-generated method stub
-		return null;
+		return emplopyeeDao.getMaxSalary();
 	}
 
 	@Override
 	public List<Employee> getSecondMaxSalaryService() {
 		// TODO Auto-generated method stub
-		return null;
+		return emplopyeeDao.getSecondMaxSalary();
 	}
 
 	@Override
 	public List<Employee> getMinSalaryService() {
 		// TODO Auto-generated method stub
-		return null;
+		return emplopyeeDao.getMinSalary();
+	}
+
+	@Override
+	public boolean deleteEmployeeService(int id) {
+		// TODO Auto-generated method stub
+		return emplopyeeDao.deleteEmployee(id);
 	}
 
 }

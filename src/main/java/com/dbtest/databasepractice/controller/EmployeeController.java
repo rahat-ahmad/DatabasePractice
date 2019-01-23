@@ -9,46 +9,41 @@ import com.dbtest.databasepractice.serviceimpl.EmployeeServiceImpl;
 public class EmployeeController {
 
 	Employee employee;
-	EmployeeService employeeService;
+	EmployeeService employeeService = new EmployeeServiceImpl();
 
 	public boolean insertEmployeeController(int salary, String firstName, String address, String lastName) {
 		employee = new Employee(firstName, lastName, address, salary);
-		employeeService = new EmployeeServiceImpl();
 		return employeeService.insertEmployeeService(employee);
-
 	}
 
 	public List<Employee> viewAllEmployeeController() {
-		employeeService = new EmployeeServiceImpl();
 		return employeeService.viewAllEmployeeService();
 	}
 
 	public boolean employeeUpdateController(int id , int salary, String firstName, String address, String lastName) {
 		employee = new Employee(firstName, lastName, address, salary);
 		employee.setId(id);
-		employeeService = new EmployeeServiceImpl();
-		
-		return false;
+		return employeeService.updateEmployeeService(employee);
 	}
 
-	public boolean employeeDeleteController() {
-
-		return false;
+	public boolean employeeDeleteController(int id) {
+		return employeeService.deleteEmployeeService(id);
 	}
 
 	public List<Employee> getMaxSalaryController() {
-
-		return null;
+		return employeeService.getMaxSalaryService();
 	}
 
 	public List<Employee> getSecondMaxSalaryController() {
+		return employeeService.getSecondMaxSalaryService();
+	}
 
-		return null;
+	public List<Employee> getMinSalaryController() {
+		return employeeService.getMinSalaryService();
 	}
 	
-	public List<Employee> getMinSalaryController() {
-
-		return null;
+	public List<Employee> getSpecificEmployeeController(int id) {
+		return employeeService.getSpecificEmployeeService(id);
 	}
 	
 	

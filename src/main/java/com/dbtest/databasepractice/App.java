@@ -1,13 +1,7 @@
 package com.dbtest.databasepractice;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-import com.dbtest.databasepractice.common.DBOperations;
-import com.dbtest.databasepractice.dao.EmployeeDao;
-import com.dbtest.databasepractice.daoimpl.EmployeeDaoImpl;
-import com.dbtest.databasepractice.model.Employee;
 
 /**
  * Hello world!
@@ -63,5 +57,6 @@ public class App {
 		    }
 
 		}
+		scanner.close();
 	}
 }

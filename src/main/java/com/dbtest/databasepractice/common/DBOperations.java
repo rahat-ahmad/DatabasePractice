@@ -31,6 +31,7 @@ public class DBOperations {
 		try {
 			statement = dbConnection.DBConnection().createStatement();
 			ResultSet resultSet = statement.executeQuery("SELECT * FROM T_EMPLOYEEINFO;");
+			dbConnection.DBConnection().close();
 			return resultSet;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -44,6 +45,7 @@ public class DBOperations {
 		try {
 			statement = dbConnection.DBConnection().createStatement();
 			ResultSet resultSet = statement.executeQuery("SELECT * FROM T_EMPLOYEEINFO where eid = "+id+";");
+			dbConnection.DBConnection().close();
 			return resultSet;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -58,6 +60,7 @@ public class DBOperations {
 		try {
 			statement = dbConnection.DBConnection().createStatement();
 			statement.executeUpdate("UPDATE T_EMPLOYEEINFO SET efirstname = '"+employee.getFirstName()+"', elastname = '"+employee.getLastName()+"', esal = "+employee.getSalary()+" , eaddress = '"+employee.getAddress()+"' WHERE eid = "+employee.getId()+";");
+			dbConnection.DBConnection().close();
 			return true;
 			
 		} catch (SQLException e) {
@@ -71,6 +74,7 @@ public class DBOperations {
 		try {
 			statement = dbConnection.DBConnection().createStatement();
 			statement.executeUpdate("DELETE FROM T_EMPLOYEEINFO WHERE eid = "+id+";");
+			dbConnection.DBConnection().close();
 			return true;
 			
 		} catch (SQLException e) {
@@ -85,6 +89,7 @@ public class DBOperations {
 		try {
 			statement = dbConnection.DBConnection().createStatement();
 			ResultSet resultSet = statement.executeQuery("SELECT max(esal) FROM T_EMPLOYEEINFO");
+			dbConnection.DBConnection().close();
 			return resultSet;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -98,6 +103,7 @@ public class DBOperations {
 		try {
 			statement = dbConnection.DBConnection().createStatement();
 			ResultSet resultSet = statement.executeQuery("SELECT max(esal) esal<(SELECT max(esal) FROM T_EMPLOYEEINFO");
+			dbConnection.DBConnection().close();
 			return resultSet;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -110,6 +116,7 @@ public class DBOperations {
 		try {
 			statement = dbConnection.DBConnection().createStatement();
 			ResultSet resultSet = statement.executeQuery("SELECT min(esal) FROM T_EMPLOYEEINFO");
+			dbConnection.DBConnection().close();
 			return resultSet;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

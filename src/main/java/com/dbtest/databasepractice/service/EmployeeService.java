@@ -12,9 +12,9 @@ public interface EmployeeService {
 
 	boolean updateEmployeeService(Employee employee);
 
-	boolean deleteEmployeeService(Employee employee);
+	boolean deleteEmployeeService(int id);
 	
-	boolean getSpecificEmployeeService(int id);
+	List<Employee> getSpecificEmployeeService(int id);
 	List<Employee> getMaxSalaryService();
 	List<Employee> getSecondMaxSalaryService();
 	List<Employee> getMinSalaryService();
