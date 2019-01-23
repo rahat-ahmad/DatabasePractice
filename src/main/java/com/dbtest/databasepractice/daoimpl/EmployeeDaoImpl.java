@@ -14,9 +14,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	Employee employee;
 
 	public boolean insertEmployee(Employee employee) {
-
-		// TODO Auto-generated method stub
-		return false;
+		dbOperations = new DBOperations();
+		return dbOperations.insert(employee); 
 	}
 
 	public List<Employee> viewAllEmplyee() {
@@ -48,12 +47,14 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 	public boolean updateEmployee(Employee employee) {
 		// TODO Auto-generated method stub
-		return false;
+		dbOperations = new DBOperations();
+		return dbOperations.update(employee);
 	}
 
 	public boolean deleteEmployee(Employee employee) {
 		// TODO Auto-generated method stub
-		return false;
+		dbOperations = new DBOperations();
+		return dbOperations.delete(employee.getId());
 	}
 
 }
