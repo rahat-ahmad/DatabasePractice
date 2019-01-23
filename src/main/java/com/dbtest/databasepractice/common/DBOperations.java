@@ -81,6 +81,44 @@ public class DBOperations {
 		
 	}
 	
+	public ResultSet findMaxSalary() {
+		try {
+			statement = dbConnection.DBConnection().createStatement();
+			ResultSet resultSet = statement.executeQuery("SELECT max(esal) FROM T_EMPLOYEEINFO");
+			return resultSet;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
+	
+	public ResultSet findSecondMaxSalary() {
+		try {
+			statement = dbConnection.DBConnection().createStatement();
+			ResultSet resultSet = statement.executeQuery("SELECT max(esal) esal<(SELECT max(esal) FROM T_EMPLOYEEINFO");
+			return resultSet;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public ResultSet findMinSalary() {
+		try {
+			statement = dbConnection.DBConnection().createStatement();
+			ResultSet resultSet = statement.executeQuery("SELECT min(esal) FROM T_EMPLOYEEINFO");
+			return resultSet;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	
 	
 
 }

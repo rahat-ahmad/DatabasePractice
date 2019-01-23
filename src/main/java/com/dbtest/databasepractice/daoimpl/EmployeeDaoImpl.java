@@ -57,4 +57,28 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		return dbOperations.delete(employee.getId());
 	}
 
+	@Override
+	public boolean getSpecificEmployee(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Employee> getMaxSalary() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Employee> getSecondMaxSalary() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Employee> getMinSalary() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

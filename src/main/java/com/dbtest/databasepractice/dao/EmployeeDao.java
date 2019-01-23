@@ -10,5 +10,9 @@ public interface EmployeeDao {
 	List<Employee> viewAllEmplyee();
 	boolean updateEmployee(Employee employee);
 	boolean deleteEmployee(Employee employee);
+	boolean getSpecificEmployee(int id);
+	List<Employee> getMaxSalary();
+	List<Employee> getSecondMaxSalary();
+	List<Employee> getMinSalary();
 
 }
