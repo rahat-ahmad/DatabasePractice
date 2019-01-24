@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.dbtest.databasepractice.controller.EmployeeController;
 import com.dbtest.databasepractice.model.Employee;
@@ -13,11 +11,11 @@ import com.dbtest.databasepractice.model.Employee;
 public class ViewDataFromDB {
 	
 	EmployeeController employeeController = new EmployeeController();
-	
 
 	public void employeeAdd() {
 		Scanner stringInput = new Scanner(System.in);
 		Scanner intInput = new Scanner(System.in);
+		System.out.println();
 		System.out.println("Insert employee first name");
 		String firstName = stringInput.nextLine();
 		System.out.println("Insert employee last name");
@@ -33,8 +31,8 @@ public class ViewDataFromDB {
 		else {
 			System.out.println("Successfully inserted");
 		}
-		stringInput.close();
-		intInput.close();
+//		stringInput.close();
+//		intInput.close();
 	}
 
 	public void viewAllEmployee() {
@@ -58,10 +56,16 @@ public class ViewDataFromDB {
 		
 		Scanner stringInput = new Scanner(System.in);
 		Scanner intInput = new Scanner(System.in);
+		System.out.println();
+		System.out.println("Insert the id which employee you want to update=========");
 		int id = intInput.nextInt();
+		System.out.println("Insert employee first name");
 		String firstName = stringInput.nextLine();
+		System.out.println("Insert employee last name");
 		String lastName = stringInput.nextLine();
+		System.out.println("Insert employee address");
 		String address = stringInput.nextLine();
+		System.out.println("Insert Employee Salary");
 		int salary = intInput.nextInt();
 		
 		employeeController.employeeUpdateController(id, salary, firstName, address, lastName);
@@ -74,11 +78,10 @@ public class ViewDataFromDB {
 
 	public void employeeDelete() {
 		Scanner intInput = new Scanner(System.in);
+		System.out.println();
+		System.out.println("Enter the id number which employee you want to delete");
 		int id = intInput.nextInt();
 		employeeController.employeeDeleteController(id);
-		
-		
-		
 		intInput.close();
 
 	}
@@ -138,6 +141,8 @@ public class ViewDataFromDB {
 	}
 	
 	public void viewSpecificEmployee() {
+		
+		
 		
 
 	}

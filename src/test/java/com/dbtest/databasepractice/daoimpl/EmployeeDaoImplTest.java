@@ -52,21 +52,35 @@ public class EmployeeDaoImplTest {
 	public void testGetMaxSalary() {
 		List<Employee> employeeList = new ArrayList<Employee>();
 		employeeList = employeeDao.getMaxSalary();
-		assertEquals(45000, employeeList.get(0).getSalary());
+		int index = 0;
+		for(Employee emp : employeeList) {
+			assertEquals(45000, emp.getSalary());
+			index++;
+		}
+
 	}
 
 	@Test
 	public void testGetSecondMaxSalary() {
 		List<Employee> employeeList = new ArrayList<Employee>();
 		employeeList = employeeDao.getSecondMaxSalary();
-		assertEquals(30000, employeeList.get(0).getSalary());
+		int index = 0;
+		for(Employee emp : employeeList) {
+			assertEquals(30000, emp.getSalary());
+			index++;
+		}
+		
 	}
 
 	@Test
 	public void testGetMinSalary() {
 		List<Employee> employeeList = new ArrayList<Employee>();
 		employeeList = employeeDao.getMinSalary();
-		assertEquals(30000, employeeList.get(0).getSalary());
+		int index = 0;
+		for(Employee emp : employeeList) {
+			assertEquals(30000, emp.getSalary());
+			index++;
+		}
 	}
 
 	@Test
