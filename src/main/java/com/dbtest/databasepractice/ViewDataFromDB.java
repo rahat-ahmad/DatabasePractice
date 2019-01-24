@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.dbtest.databasepractice.controller.EmployeeController;
 import com.dbtest.databasepractice.model.Employee;
 
 public class ViewDataFromDB {
 	
 	EmployeeController employeeController = new EmployeeController();
+	
 
 	public void employeeAdd() {
 		Scanner stringInput = new Scanner(System.in);
